@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main_app.apps.MainAppConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +52,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'portraits_project_backend.urls'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
 
 TEMPLATES = [
     {
