@@ -56,4 +56,3 @@ class Comments(models.Model):
         :return: Output the work description.
         """
         return self.description
-    
