@@ -13,6 +13,6 @@ from .views import *
 
 app_name = 'artworks'
 urlpatterns = [
-    path('artworks/', WorkCreateView.as_view()),  # route Work view class.
-    path('comments/', CommentsCreateView.as_view()),
+    path('main_app/artworks/', WorkCreateView.as_view()),  # route Work view class.
+    path('main_app/comments/', CommentsCreateView.as_view()),
 ]
