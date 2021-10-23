@@ -1,5 +1,7 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 
 class WorksManager(models.Manager):
@@ -32,7 +34,7 @@ class Works(models.Model):
     price = models.IntegerField()
     ordering_option = models.BooleanField(default=True)
     publishing_time = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-    created_by = models.ForeignKey(User, editable=False, blank=True, null=True, on_delete=models.CASCADE)
+    created_by = models.ForeignKey(User, verbose_name='Пользователь', on_delete=models.CASCADE)
     objects = WorksManager()
 
     def __str__(self):
@@ -48,7 +50,7 @@ class Comments(models.Model):
     """
     work = models.ForeignKey(Works, on_delete=models.CASCADE)
     description = models.TextField(max_length=400)
-    comment_author = models.ForeignKey(User, editable=False, null=True, blank=True, on_delete=models.CASCADE)
+    comment_author = models.ForeignKey(User, on_delete=models.CASCADE)
     publishing_time = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
