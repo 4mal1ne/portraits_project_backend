@@ -5,8 +5,9 @@ from ..models import Works, Comments
 
 class WorkSerializer(serializers.ModelSerializer):
     """
-    Selection of the desired model and fields to be serialized.
+    Selection of the desired model and fields to be serialized in Json format.
     """
+
     class Meta:
         model = Works
         fields = '__all__'
@@ -14,9 +15,9 @@ class WorkSerializer(serializers.ModelSerializer):
 
 class CommentsSerializer(serializers.ModelSerializer):
     """
-    Selection of the desired model and fields to be serialized.
+    Selection of the desired model and fields to be serialized in Json format.
     """
+
     class Meta:
         model = Comments
         fields = '__all__'
-
