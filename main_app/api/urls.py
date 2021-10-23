@@ -14,5 +14,7 @@ from .views import *
 app_name = 'artworks'
 urlpatterns = [
     path('main_app/artworks/', WorkCreateView.as_view()),  # route Work view class.
-    path('main_app/comments/', CommentsCreateView.as_view()),
+    path('main_app/comments/', CommentsCreateView.as_view()),  # route Comments view class
+    path('all_artworks/', WorksListView.as_view()),  # Watch all works data view.
+    path('all_comments/', CommentsListView.as_view()),  # Watch all comments data view.
 ]
