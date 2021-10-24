@@ -43,5 +43,5 @@ class WorksDetailView(generics.RetrieveUpdateDestroyAPIView):
     """
     Change, or delete the json data stack.
     """
-    serializer_class = WorkSerializer  # Selecting all fields from the "WorkSerializer" serializer
+    serializer_class = WorkSerializer  # Selecting all fields from the "WorkSerializer" serializer.
     queryset = Works.objects.all()  # Take the all data for model 'Works' and save it.
