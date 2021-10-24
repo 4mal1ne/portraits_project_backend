@@ -24,10 +24,24 @@ class CommentsCreateView(generics.CreateAPIView):
 
 
 class WorksListView(generics.ListAPIView):
+    """
+    Display the entire json stack of data about the artist's work.
+    """
     serializer_class = WorkListSerializer  # The heir for this model is the model WorkListSerializer.
     queryset = Works.objects.all()  # Take the all data for model WorkListSerializer and save it.
 
 
 class CommentsListView(generics.ListAPIView):
+    """
+    Display the entire json stack of data about the artist's works comments.
+    """
     serializer_class = CommentsListSerializer  # The heir for this model is the model CommentsListSerializer.
     queryset = Comments.objects.all()  # Take the all data for model CommentsListSerializer and save it.
+
+
+class WorksDetailView(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Change, or delete the json data stack.
+    """
+    serializer_class = WorkSerializer  # Selecting all fields from the "WorkSerializer" serializer
+    queryset = Works.objects.all()  # Take the all data for model 'Works' and save it.

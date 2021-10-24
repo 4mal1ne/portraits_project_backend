@@ -17,4 +17,5 @@ urlpatterns = [
     path('main_app/comments/', CommentsCreateView.as_view()),  # route Comments view class
     path('all_artworks/', WorksListView.as_view()),  # Watch all works data view.
     path('all_comments/', CommentsListView.as_view()),  # Watch all comments data view.
+    path('detail/<int:pk>/', WorksDetailView.as_view()),  # Change all works data.
 ]
