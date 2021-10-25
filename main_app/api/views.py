@@ -8,6 +8,8 @@ from .serializers import (
 )
 from ..models import Works, Comments
 
+from main_app.api.permissions import IsOwnerOrReadOnly
+
 
 class WorkCreateView(generics.CreateAPIView):
     """
@@ -45,3 +47,4 @@ class WorksDetailView(generics.RetrieveUpdateDestroyAPIView):
     """
     serializer_class = WorkSerializer  # Selecting all fields from the "WorkSerializer" serializer.
     queryset = Works.objects.all()  # Take the all data for model 'Works' and save it.
+    permission_classes = (IsOwnerOrReadOnly, )  # Only the user who created this entry can change the data in it.
