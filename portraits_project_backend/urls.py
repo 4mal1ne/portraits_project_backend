@@ -18,5 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/v1/create_auth/', include('rest_framework.urls')),  # Create registration.
     path('api/v1/artworks/', include('main_app.api.urls')),  # Anything after "api/" look for that path.
 ]
