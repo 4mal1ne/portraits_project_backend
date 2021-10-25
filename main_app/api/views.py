@@ -1,4 +1,5 @@
 from rest_framework import generics
+from rest_framework.permissions import IsAdminUser, IsAuthenticated
 
 from .serializers import (
     WorkSerializer,
@@ -31,6 +32,7 @@ class WorksListView(generics.ListAPIView):
     """
     serializer_class = WorkListSerializer  # The heir for this model is the model WorkListSerializer.
     queryset = Works.objects.all()  # Take the all data for model WorkListSerializer and save it.
+    permission_classes = (IsAuthenticated,)  # The data set can only be viewed by a registered users.
 
 
 class CommentsListView(generics.ListAPIView):
@@ -47,4 +49,7 @@ class WorksDetailView(generics.RetrieveUpdateDestroyAPIView):
     """
     serializer_class = WorkSerializer  # Selecting all fields from the "WorkSerializer" serializer.
     queryset = Works.objects.all()  # Take the all data for model 'Works' and save it.
-    permission_classes = (IsOwnerOrReadOnly, )  # Only the user who created this entry can change the data in it.
+    permission_classes = (
+        IsOwnerOrReadOnly,
+        IsAdminUser,
+    )  # Only the admin or the user who created this entry can change the data in it.
