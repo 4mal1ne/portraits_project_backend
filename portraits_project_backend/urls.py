@@ -13,11 +13,29 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+# Django imports
 from django.contrib import admin
 from django.urls import path, include
+
+# DRF imports
+from rest_framework.documentation import include_docs_urls
+from rest_framework.schemas import get_schema_view
+from rest_framework_swagger.views import get_swagger_view
+
+API_TITLE = 'Artworks API'
+API_DESCRIPTION = 'A work API for create, update and delete artworks and comments.'
+
+schema_view = get_swagger_view(title=API_TITLE)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/create_auth/', include('rest_framework.urls')),  # Create registration.
     path('api/v1/artworks/', include('main_app.api.urls')),  # Anything after "api/" look for that path.
+    path('docs/', include_docs_urls(
+        title=API_TITLE,
+        description=API_DESCRIPTION    # Add work API documentation from DRF.
+    )
+         ),
+    path('swagger-docs/', schema_view),  # Add works API scheme.
+
 ]
