@@ -53,7 +53,6 @@ class Comments(models.Model):
     comment_author = models.ForeignKey(User, on_delete=models.CASCADE)
     publishing_time = models.DateTimeField(auto_now_add=True)
 
-
     def __str__(self):
         """
         :return: Output the work description.
