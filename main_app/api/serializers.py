@@ -41,3 +41,14 @@ class CommentsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comments  # The heir is model Comments.
         fields = '__all__'  # All fields into the model Comments
+
+
+class WorkDetailSerializer(serializers.ModelSerializer):
+    """
+    Hiding the user so you can't change it.
+    """
+    user = serializers.HiddenField(default=serializers.CurrentUserDefault())
+
+    class Meta:
+        model = Works
+        fields = '__all__'
