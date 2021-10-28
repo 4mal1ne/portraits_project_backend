@@ -1,14 +1,16 @@
+# DRF imports.
 from rest_framework import generics
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 
+#  serializers imports.
 from .serializers import (
     WorkSerializer,
     CommentsSerializer,
     WorkListSerializer,
     CommentsListSerializer
 )
+# Others imports.
 from ..models import Works, Comments
-
 from main_app.api.permissions import IsOwnerOrReadOnly
 
 
@@ -32,7 +34,7 @@ class WorksListView(generics.ListAPIView):
     """
     serializer_class = WorkListSerializer  # The heir for this model is the model WorkListSerializer.
     queryset = Works.objects.all()  # Take the all data for model WorkListSerializer and save it.
-    permission_classes = (IsAuthenticated,)  # The data set can only be viewed by a registered users.
+    permission_classes = (IsAdminUser,)  # The data set can only be viewed by a registered users.
 
 
 class CommentsListView(generics.ListAPIView):
