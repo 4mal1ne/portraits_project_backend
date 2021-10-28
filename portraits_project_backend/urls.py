@@ -37,5 +37,6 @@ urlpatterns = [
     )
          ),
     path('swagger-docs/', schema_view),  # Add works API scheme.
-
+    path('api/v1/auth/', include('djoser.urls')),
+    path('api/v1/auth_token/', include('djoser.urls.authtoken')),
 ]
