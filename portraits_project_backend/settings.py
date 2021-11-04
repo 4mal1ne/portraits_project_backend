@@ -35,7 +35,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # The first place
     'main_app.apps.MainAppConfig',
+    'main_app_ui.apps.MainAppUiConfig',
+
+    # DRF module.
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_swagger',
