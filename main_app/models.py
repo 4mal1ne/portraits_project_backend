@@ -37,6 +37,13 @@ class Works(models.Model):
     user = models.ForeignKey(User, verbose_name='Пользователь', on_delete=models.CASCADE)
     objects = WorksManager()
 
+    class Meta:
+        """
+        Change the display of tasks in the table.
+        """
+        verbose_name = 'Работа'
+        verbose_name_plural = 'Работы'
+
     def __str__(self):
         """
         :return: Output the work name.
