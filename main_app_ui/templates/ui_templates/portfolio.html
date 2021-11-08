@@ -1,10 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "ui_templates/home_page.html" %}
 
-</body>
-</html>
+
+{% block content %}
+    {% for artwork in data %}
+        <div class="artwork-block-wrapper">
+            <div class="artwork-block">
+                <h1 class="artwork-name">{{ artwork.name }}</h1>
+                <div class="artwork-image">
+                    <img class="artwork-image" src="{{ artwork.photo.url }}">
+                </div>
+                <p class="artwork-description">{{ artwork.work_description }}</p>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}
+
+
