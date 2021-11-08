@@ -13,7 +13,8 @@ def about_artist(request):
 
 
 def portfolio(request):
-    pass
+    data = Works.objects.all()
+    return render(request, 'ui_templates/portfolio.html', {'data': data})
 
 
 def price(request):
