@@ -1,289 +1,40 @@
-{% load  static %}
 <!DOCTYPE html>
 <html lang="en">
+{% load  static %}
 <head>
     <meta charset="UTF-8">
     <title>Portraits for soul</title>
-    <link rel="stylesheet" href="{% static 'main_app_ui/css/home_page.sass' %}" type="text/css">
-    <style>
-        body {
-            background-color: #cbcbcb;
-        }
-
-        .button {
-            position: relative;
-            display: inline-block;
-            padding: 15px 30px;
-            margin-left: 57%;
-            color: #ffffff;
-            text-transform: uppercase;
-            text-decoration: none;
-            font-size: 24px;
-            letter-spacing: 4px;
-            transition: 0.2s;
-        }
-
-        .button:hover {
-            transition: 0.5s;
-            transition-delay: 0.5s;
-            color: #000000;
-            text-shadow: 0 0 0.6rem #484848, 0 0 1.5rem #171717,
-            -0.2rem 0.1rem 1rem #919191, 0.2rem 0.1rem 1rem #6b6969,
-            0 -0.5rem 2rem #313030, 0 0.5rem 3rem #252424;
-
-        }
-
-        ul {
-            list-style-type: none;
-            margin: 50px;
-            padding: 0;
-            overflow: hidden;
-            position: -webkit-sticky; /* Safari */
-            position: sticky;
-            top: 0;
-        }
-
-        li {
-            float: left;
-        }
-
-        li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            letter-spacing: 4px;
-            font-size: 24px;
-        }
-
-        li a:hover {
-            cursor: pointer;
-            color: #000000;
-            border-bottom: 2px solid #0f0f0f;
-            transition: .1s;
-        }
-
-        .sign {
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 50%;
-            height: 50%;
-            background-image: radial-gradient(
-                    ellipse 50% 35% at 50% 50%,
-                    #212121,
-                    transparent
-            );
-            transform: translate(-50%, -50%);
-            letter-spacing: 2px;
-            left: 50%;
-            top: 50%;
-            text-transform: uppercase;
-            font-size: 6em;
-            color: #000000;
-            text-shadow: 0 0 0.6rem #484848, 0 0 1.5rem #171717,
-            -0.2rem 0.1rem 1rem #919191, 0.2rem 0.1rem 1rem #6b6969,
-            0 -0.5rem 2rem #313030, 0 0.5rem 3rem #252424;
-            animation: shine 2s forwards, flicker 3s infinite;
-        }
-
-        @keyframes blink {
-            0%,
-            22%,
-            36%,
-            75% {
-                color: #000000;
-                text-shadow: 0 0 0.6rem #484848, 0 0 1.5rem #171717,
-                -0.2rem 0.1rem 1rem #919191, 0.2rem 0.1rem 1rem #6b6969,
-                0 -0.5rem 2rem #313030, 0 0.5rem 3rem #252424;
-            }
-            28%,
-            33% {
-                color: #ABAA90FF;
-                text-shadow: none;
-            }
-            82%,
-            97% {
-                color: #abaa90;
-                text-shadow: none;
-            }
-        }
-
-        .flicker {
-            animation: shine 2s forwards, blink 3s 2s infinite;
-        }
-
-        .fast-flicker {
-            animation: shine 2s forwards, blink 10s 1s infinite;
-        }
-
-        @keyframes shine {
-            0% {
-                color: #1a1919;
-                text-shadow: none;
-            }
-            100% {
-                color: #000000;
-                text-shadow: 0 0 0.6rem #484848, 0 0 1.5rem #171717,
-                -0.2rem 0.1rem 1rem #919191, 0.2rem 0.1rem 1rem #6b6969,
-                0 -0.5rem 2rem #313030, 0 0.5rem 3rem #252424;
-            }
-        }
-
-        @keyframes flicker {
-            from {
-                opacity: 1;
-            }
-
-            4% {
-                opacity: 0.9;
-            }
-
-            6% {
-                opacity: 0.85;
-            }
-
-            8% {
-                opacity: 0.95;
-            }
-
-            10% {
-                opacity: 0.9;
-            }
-
-            11% {
-                opacity: 0.922;
-            }
-
-            12% {
-                opacity: 0.9;
-            }
-
-            14% {
-                opacity: 0.95;
-            }
-
-            16% {
-                opacity: 0.98;
-            }
-
-            17% {
-                opacity: 0.9;
-            }
-
-            19% {
-                opacity: 0.93;
-            }
-
-            20% {
-                opacity: 0.99;
-            }
-
-            24% {
-                opacity: 1;
-            }
-
-            26% {
-                opacity: 0.94;
-            }
-
-            28% {
-                opacity: 0.98;
-            }
-
-            37% {
-                opacity: 0.93;
-            }
-
-            38% {
-                opacity: 0.5;
-            }
-
-            39% {
-                opacity: 0.96;
-            }
-
-            42% {
-                opacity: 1;
-            }
-
-            44% {
-                opacity: 0.97;
-            }
-
-            46% {
-                opacity: 0.94;
-            }
-
-            56% {
-                opacity: 0.9;
-            }
-
-            58% {
-                opacity: 0.9;
-            }
-
-            60% {
-                opacity: 0.99;
-            }
-
-            68% {
-                opacity: 1;
-            }
-
-            70% {
-                opacity: 0.9;
-            }
-
-            72% {
-                opacity: 0.95;
-            }
-
-            93% {
-                opacity: 0.93;
-            }
-
-            95% {
-                opacity: 0.95;
-            }
-
-            97% {
-                opacity: 0.93;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-    </style>
+    <link rel="stylesheet" href="{% static 'main_app_ui/css/home_page.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'main_app_ui/css/portfolio.css' %}" type="text/css">
 </head>
 <body>
-<section class="main">
-    <header>
-        <div class="header">
-            <div class="logo">
-                <a href="#"><img class="logo-img" src="#" alt="Logo"></a>
+<nav>
+    <ul class="nav">
+        <li class="nav-item"><a class="nav-link" href="">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/about_artist">About artist</a></li>
+        <li class="nav-item"><a class="nav-link" href="/portfolio">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="/testimonials">Testimonials</a></li>
+        <li class="nav-item"><a class="nav-link" href="/price">Price</a></li>
+    </ul>
+</nav>
+<div class="wrapper">
+    <section class="main">
+        <header>
+            <div class="header">
+                <div class="logo">
+                    <a href=""><img class="logo-img" src="../../static/main_app_ui/images/icons&logo/s_logo.png"
+                                    alt="Logo"></a>
+                </div>
             </div>
-            <nav>
-                <ul class="nav">
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About artist</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Testimonials</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Price</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <div class="wrapper">
+        </header>
         <div class="sign">
             <span class="fast-flicker">Port</span>raits <span class="flicker">For </span>Soul
         </div>
-        <p class="test" >hello</p>
-    </div>
-</section>
+    </section>
+</div>
+
+{% block content %}
+
+{% endblock %}
 </body>
 </html>
