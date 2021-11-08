@@ -16,6 +16,8 @@ Including another URLconf
 # Django imports
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 # DRF imports
 from rest_framework.documentation import include_docs_urls
@@ -39,6 +41,7 @@ schema_view = get_swagger_view(title=API_TITLE)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_page),
+    path('portfolio/', portfolio),
     path('api/v1/create_auth/', include('rest_framework.urls')),  # Create registration.
     path('api/v1/artworks/', include('main_app.api.urls')),  # Anything after "api/" look for that path.
     path('docs/', include_docs_urls(
@@ -50,3 +53,7 @@ urlpatterns = [
     path('api/v1/auth/', include('djoser.urls')),
     path('api/v1/auth_token/', include('djoser.urls.authtoken')),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
