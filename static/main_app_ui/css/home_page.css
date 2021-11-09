@@ -1,65 +1,6 @@
 body {
-background-color: #141114;
-            background-image: linear-gradient(335deg, black 23px, transparent 23px),
-            linear-gradient(155deg, black 23px, transparent 23px),
-            linear-gradient(335deg, black 23px, transparent 23px),
-            linear-gradient(155deg, black 23px, transparent 23px);
-            background-size: 58px 58px;
-            background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
-}
-
-.wrapper {
-    max-width: 1170px;
-    padding: 0 30px;
-    display: block;
-    margin: 0 auto;
-}
-
-
-ul {
-    list-style-type: none;
-    margin: 50px;
-    padding: 0;
-    overflow: hidden;
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    letter-spacing: 4px;
-    font-size: 24px;
-}
-
-li a:hover {
-    cursor: pointer;
-    color: #000000;
-    border-bottom: 2px solid #0f0f0f;
-    transition: .1s;
-}
-
-.sign {
-    display: flex;
-    justify-content: flex-end;
-    width: 300px;
-    height: 50px;
-    margin-top: 40px;
-    letter-spacing: 6px;
-    font-size: 3em;
-    color: #000000;
-    text-shadow: 0 0 0.5rem #484848, 0 0 1.5rem #171717,
-    -0.2rem 0.1rem 1rem #919191, 0.2rem 0.1rem 1rem #6b6969,
-    0 -0.5rem 2rem #313030, 0 0.5rem 3rem #252424;
-    animation: shine 2s forwards, flicker 3s infinite;
+    background: url("/static/main_app_ui/images/icons&logo/background.jpg") no-repeat center;
+    box-sizing: border-box;
 }
 
 @keyframes blink {
@@ -232,6 +173,29 @@ li a:hover {
 }
 
 
+.wrapper {
+    max-width: 1170px;
+    padding: 0 30px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.sign {
+    display: flex;
+    justify-content: flex-end;
+    width: 300px;
+    height: 50px;
+    margin-top: 40px;
+    letter-spacing: 6px;
+    font-size: 3em;
+    color: #000000;
+    text-shadow: 0 0 0.5rem #484848, 0 0 1.5rem #171717,
+    -0.2rem 0.1rem 1rem #919191, 0.2rem 0.1rem 1rem #6b6969,
+    0 -0.5rem 2rem #313030, 0 0.5rem 3rem #252424;
+    animation: shine 2s forwards, flicker 3s infinite;
+}
+
 .main {
     display: flex;
     justify-content: space-around;
@@ -241,7 +205,7 @@ li a:hover {
     margin-left: 15px;
 }
 
-.nav-link link {
+.nav-link {
     font-family: 'Dancing Script', cursive;
     font-weight: 700;
     font-size: 30px;
@@ -251,11 +215,9 @@ li a:hover {
     transition: 0.1s;
 }
 
-.logo {
-    margin-left: 30px;
-}
-
-.logo-img {
-    height: 150px;
-    width: 150px;
+.nav-link:hover {
+    cursor: pointer;
+    color: #212020;
+    border-bottom: 2px solid #1e1d1d;
+    transition: .1s;
 }
