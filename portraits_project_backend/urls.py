@@ -40,7 +40,7 @@ schema_view = get_swagger_view(title=API_TITLE)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_page),
+    path('home/', home_page),
     path('portfolio/', portfolio),
     path('api/v1/create_auth/', include('rest_framework.urls')),  # Create registration.
     path('api/v1/artworks/', include('main_app.api.urls')),  # Anything after "api/" look for that path.
