@@ -29,12 +29,11 @@ schema_view = get_swagger_view(title=API_TITLE)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('main_app_ui.urls')),
     path('api/v1/create_auth/', include('rest_framework.urls')),  # Create registration.
     path('api/v1/artworks/', include('main_app.api.urls')),  # Anything after "api/" look for that path.
     path('docs/', include_docs_urls(
         title=API_TITLE,
-        description=API_DESCRIPTION  # Add work API documentation from DRF.
+        description=API_DESCRIPTION    # Add work API documentation from DRF.
     )
          ),
     path('swagger-docs/', schema_view),  # Add works API scheme.
