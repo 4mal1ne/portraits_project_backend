@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Portraits for soul</title>
+    <link rel="stylesheet" href="{% static 'ui_templates/css/home.css' %}">
+</head>
+<body>
+<nav>
+    <ul class="nav">
+        <li class="nav-item"><a class="nav-link" href="">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/about_artist">About artist</a></li>
+        <li class="nav-item"><a class="nav-link" href="/portfolio">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="/testimonials">Testimonials</a></li>
+    </ul>
+</nav>
+<div class="wrapper">
+    <section class="main">
+        <div class="sign">
+            <span class="fast-flicker">Port</span>raits <span class="flicker">For </span>Soul
+        </div>
+    </section>
+</div>
+{% block content %}
+
+{% endblock %}
+</body>
+</html>
