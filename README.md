@@ -9,11 +9,11 @@ ___
 > ***and*** `python3 manage.py migrate`
 > ___
 >> ***Create superuser with*** `python3 manage.py createsuperuser`
->>> ***Download needed libraries like :***
-> :white_check_mark: 'rest_framework'
-> :white_check_mark: 'rest_framework.authtoken'
-> :white_check_mark: 'rest_framework_swagger'
-> :white_check_mark: 'djoser'
+>>> ***Download needed libraries like :***  
+>> :white_check_mark: 'rest_framework'   
+>> :white_check_mark: 'rest_framework.authtoken'  
+>> :white_check_mark: 'rest_framework_swagger'  
+>> :white_check_mark: 'djoser'
 > ___
 >> ***Create main static folder with :*** `python3 namage.py collectstatic`
 >___
