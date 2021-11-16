@@ -1,5 +1,5 @@
 body {
-    background: url("/static/main_app_ui/images/icons&logo/background.jpg") no-repeat center;
+    background: url("/main_app_ui/static/main_app_ui/images/background.jpg") no-repeat center;
     box-sizing: border-box;
 }
 
