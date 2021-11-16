@@ -1,7 +1,7 @@
 # portraits_project_backend
 ___
 # ***Quick start***: 
->###*download project :* 
+>### *download project :* 
 >`git clone git@github.com:4mal1ne/portraits_project_backend.git`
 >> ***Open project in you IDE***
 > ___
