@@ -25,11 +25,11 @@ ___
 
 >### *For check all works API input this path to your browser:*
 > `"your local host path/"` *+ :*  
->`api/v1/artworks/all_artworks` **Show you all artworks API.**
-> `api/v1/artworks/all_comments` **Show you all comments API.**
-> `api/v1/artworks/main_app/artworks/` **You can create a new work.**
-> `api/v1/artworks/main_app/comments/` **You can create a new comment for some work.**  
-> `api/v1/artworks/detail/<int:pk>/` **Change\delete your work.**
+>`api/v1/artworks/all_artworks` **Show you all artworks API.**   
+> `api/v1/artworks/all_comments` **Show you all comments API.**   
+> `api/v1/artworks/main_app/artworks/` **You can create a new work.**   
+> `api/v1/artworks/main_app/comments/` **You can create a new comment for some work.**    
+> `api/v1/artworks/detail/<int:pk>/` **Change\delete your work.**  
 > ___
 > `api/v1/create_auth/` **Register user.**  
 > `docs/` **All the info about how worked this API.**  
