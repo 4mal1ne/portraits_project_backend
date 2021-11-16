@@ -5,6 +5,7 @@ __pycache__/
 
 .idea/
 /static/
+main_app_ui/static/
 
 # C extensions
 *.so
